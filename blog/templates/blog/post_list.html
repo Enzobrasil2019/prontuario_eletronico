@@ -1,28 +1,63 @@
+{% load staticfiles %}
+
 <html>
     <head>
-        <title>prontuario eletronico</title>
+        <title>HSN</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div>
-            <h1><a href="/">pacientes</a></h1>
+
+        <div class="page-header">
+            <h1><a href="/">Hospital Sem Nome</a></h1>
         </div>
+        <nav class="navbar">
+            <div class="navbar-fundo">
+		<li class="menu">
+                    <li class"first-menu">
+                        <h1><a href="/">inicio</a></h1>     
+                    </li>
+                    <li class"first-menu">
+                        <h1><a href="https://www.ncbi.nlm.nih.gov/pubmed/">pubmed</a></h1>     
+                    </li>
 
-
-
-
-
-
-
-        <div>
-            <p>publicado: 14.06.2014, 12:14</p>
-            <h2><a href="">Meu primeiro post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>publicado: 14.06.2014, 12:14</p>
-            <h2><a href="">Meu segundo post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
-    </body>
-</html>
+                    <li>
+                        <h1><a href="/pacientes">lista de pacientes</a></h1>
+                        <ul>
+                            <li>
+                                <h2><a href="/pacientes/ambulatorio">Pacientes ambulatoriais</a></h1>        
+                            </li>
+                            <li>
+                                <h2><a href="/pacientes/internacao">Pacientes internados</a></h1>        
+                            </li>
+                            <li>
+                                <h2><a href="/pacientes/alta">Pacientes de alta</a></h1>        
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h1><a href="">Adicionar pacientes</a></h1>
+                        <ul>
+                            <li>
+                                <h2><a href="">Adicionar pacientes ambulatoriais</a></h1>        
+                            </li>
+                            <li>
+                                <h2><a href="">Adicionar pacientes internados</a></h1>        
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h1><a href="">Adicionar pacientes</a></h1>
+                        </ul>
+                            <li>
+                                <h2><a href="">Alterar dados de pacientes</a></h1>
+                            </li>
+                            <li>
+                                <h2><a href="">Adicionar dados de pacientes</a></h1>
+                            </li>
+                        </ul>
+                    </li>
+		</li>
+            </div>
+        </nav>
