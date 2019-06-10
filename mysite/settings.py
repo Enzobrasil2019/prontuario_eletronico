@@ -25,7 +25,7 @@ SECRET_KEY = 'n-mbuk#=t&2jtjr@8#hpwp&*0jey&7^39k!tt&t*a99p1^$xop'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'enzo2019', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'enzo2019.pythonanywhere.com']
 
 
 # Application definition
@@ -38,6 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'mostpacientes',
+    'mostinternacao',
+    'mostaltas',
+    'mostambulatorial',
+    'addpacientes',
+    'addambulatorial',
+    'addinternacao',
+    'adddados',
+    'alterdados',
+    'outras',
 ]
 
 MIDDLEWARE = [
