@@ -5,4 +5,4 @@ from .models import Pacientes
 # Create your views here.
 def post_list(request): 
 
-    return render(request, 'pacientes/post_list.html', {'posts':Pacientes})
+    return render(request, 'mostinternacao/post_list.html', {'posts':Pacientes})
