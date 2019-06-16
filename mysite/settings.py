@@ -37,17 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
     'blog',
+    'addpacientes',
     'mostpacientes',
     'mostinternacao',
     'mostaltas',
     'mostambulatorial',
-    'addpacientes',
-    'addambulatorial',
-    'addinternacao',
-    'adddados',
-    'alterdados',
-    'outras',
+    'medicos',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +58,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mysite.urls'
-
+               
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

@@ -27,5 +27,23 @@
         <div class="entrada">
             <h2>Bem vindo ao Hospital Sem Nome<h2>
         </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.nome_do_paciente }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
