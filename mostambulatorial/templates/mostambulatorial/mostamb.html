@@ -5,7 +5,7 @@
         <title>HSN-Lista De Pacientes de Ambulatorios</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/mostamb.css' %}">
+        <link rel="stylesheet" href="{% static 'amb/mostamb.css' %}">
     </head>
     <body>
 
@@ -17,7 +17,7 @@
                 <li><a href="http://127.0.0.1:8000/pg">inicio</a></li>     
                 <li><a href="http://127.0.0.1:8000/mostpacientes/">lista de pacientes</a></li>
                 <li><a href="http://127.0.0.1:8000/addpacientes/">Adicionar pacientes</a></li>
-                <li><a href="http://127.0.0.1:8000/medicos/">Meus dados</a></li>
+                <li><a href="http://127.0.0.1:8000/medicos/">Medicos</a></li>
             </ul>
         </nav>
 
@@ -47,10 +47,11 @@
         </div>
 
         <div class='pac'>
+        <h3>Pacientes Ambulatorio</h3>
         {% for Ambulatorio in queryset %}
-            <h3>Pacientes Ambulatorio</h3>
+                <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
                 {% if Ambulatorio.tipo_de_atendimento == 'ambulatorio'%}
-                <h3><a href="">{{ Ambulatorio.nome_do_paciente }}</a></h3>
+                <h1><a href="{% url 'post_detail' pk=Ambulatorio.pk %}">{{ Ambulatorio.title }}</a></h1>
                 <p>{{ Ambulatorio.nome_do_pai|linebreaksbr }}</p>
                 <p>{{ Ambulatorio.nome_da_mae|linebreaksbr }}</p>
                 <p>{{ Ambulatorio.nome_da_medico_responsavel|linebreaksbr }}</p>

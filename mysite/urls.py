@@ -23,7 +23,7 @@ urlpatterns = [
     path('mostpacientes/mostinter/', include ('mostinternacao.urls')),
     path('addpacientes/', include ('addpacientes.urls')),
     path('medicos/', include ('medicos.urls')),
-    path('pg', include ('blog.urls')),
+    path('pg', include ('pg.urls')),
     path('', include ('accounts.urls')),
 
 ]

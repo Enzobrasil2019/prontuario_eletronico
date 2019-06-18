@@ -34,6 +34,22 @@ def post_form(request):
          form = PostForm()
      return render(request, 'mostambulatorial/addamb.html', {'form': form})
 
-def post_alter(request): 
-    return render(request, 'mostambulatorial/alterdados.html', {'Ambulatorios': Ambulatorios})
+ 
+def post_edit(request, pk):
+     amb = get_object_or_404(Post, pk=pk)
+     if request.method == "POST":
+         form = PostForm(request.POST, instance=amb)
+         if form.is_valid():
+             amb = form.save(commit=False)
+             amb.author = request.user
+             amb.published_date = timezone.now()
+             amb.save()
+             return redirect('post_detail', pk=amb.pk)
+     else:
+         form = PostForm(instance=amb)
+     return render(request, 'blog/alterdados.html', {'form': form})
 
+def post_detail(request, pk):
+    Ambulatorio.objects.get(pk=pk)
+    Amb = get_object_or_404(Ambulatorio, pk=pk)
+    return render(request, 'mostambulatorial/mostdetail.html', {'Amb': Amb})

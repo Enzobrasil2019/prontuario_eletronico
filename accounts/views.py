@@ -1,11 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+
 
 # Create your views here.
+
+
 def post_login(request):
     if request.method == "POST":
-        form = Medico(data=request.POST)
+        form = AuthenticationForm(data=request.POST)
         if form.is_valid():
-            return redirect('http://127.0.0.1:8000/medicos/')
+            return redirect('http://127.0.0.1:8000/pg/')
     else: 
-        form = Medico()
-    return render(request, 'medicos/post_login.html', {'form': form })
+        form = AuthenticationForm()
+    return render(request, 'accounts/post_login.html', {'form': form })
