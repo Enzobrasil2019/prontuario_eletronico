@@ -1,5 +1,4 @@
 
-
 .page-header {
     background-color: #000080;
     margin: -2px -2px -2px -2px;
@@ -38,6 +37,7 @@ h1, h2, h3, h4 {
      display: block;
      text-decoration: none;
      text-align: center;
+     text-color:black;
      background-color: #00eaff;
 
 }
@@ -53,8 +53,8 @@ h1, h2, h3, h4 {
      margin-right: 46px;
      width: 350px;
      float: left;
-     background-color:rgba(16, 16,16, .5);
-     height:-webkit-fill-available;
+     background-color:rgba(16, 16,16, 0);
+     height:auto;
 }
 
 .lat ul {
@@ -81,6 +81,6 @@ h1, h2, h3, h4 {
     padding: -10px;
 }
 
-.pac {
+.most {
     text-align: center;
 }

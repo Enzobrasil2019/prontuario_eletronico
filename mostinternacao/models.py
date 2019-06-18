@@ -3,6 +3,14 @@ from django.utils import timezone
 
 
 class Internacao(models.Model):
+
+    em_alta = 'em alta'
+    internacao = 'internacao'
+    ambulatorio = 'ambulatorio'
+
+    tp = [(em_alta, 'Em_alta'), (internacao, 'Internacao'), (ambulatorio, 'Ambulatorio')]
+
+
     id = models.AutoField(primary_key=True)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -22,7 +30,7 @@ class Internacao(models.Model):
     medicamentos = models.CharField(max_length=200)
     exames = models.CharField(max_length=200)
     prescricao = models.TextField()
-    tipo_de_atendimento = models.CharField(max_length=200)
+    tipo_de_atendimento = models.CharField(max_length=11,choices=tp)
     published_date = models.DateTimeField(
             blank=True, null=True)
 

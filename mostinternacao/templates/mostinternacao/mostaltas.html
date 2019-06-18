@@ -15,10 +15,10 @@
         </div>
         <nav class="ini">
             <ul>
-                <li><a href="http://127.0.0.1:8000/">inicio</a></li>     
+                <li><a href="http://127.0.0.1:8000/pg">inicio</a></li>     
                 <li><a href="http://127.0.0.1:8000/mostpacientes/">lista de pacientes</a></li>
                 <li><a href="http://127.0.0.1:8000/addpacientes/">Adicionar pacientes</a></li>
-                <li><a href="/">Criando um ainda</a></li>
+                <li><a href="http://127.0.0.1:8000/medicos/">Meus dados</a></li>
             </ul>
         </nav>
 
@@ -31,10 +31,24 @@
 
             </ul>
         </nav>
+        <form method='get' action='.'>
+        <div class form-row>
+            <class form-group col=12 >
+                <div>
+                    <input class="form-control form-control-lg" border-right-0 border' type='searsh' name='nome_do_paciente_contains' placeholder="nome_do_paciente_contains">
+                    <span class = 'imn-group-append'>
+                        <div> class='forms-control pv=2 
+                            <i class='fa fa-search>></i>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
 
-        <div class='pac'>
-            <h3>Pacientes internados</h3>
-            {% for Internacao in Internacoes %}
+
+        <div class='most'>
+            <h3>Pacientes em Alta</h3>
+            {% for Internacao in queryset %}
                 {% if Internacao.tipo_de_atendimento == 'em alta'%}
             
                     <h3><a href="">{{ Internacao.nome_do_paciente }}</a></h3>

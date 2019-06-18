@@ -5,7 +5,7 @@
         <title>HSN-adicionando paciente</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/addinter.css' %}">
+        <link rel="stylesheet" href="{% static 'css/med.css' %}">
     </head>
     <body>
 
@@ -14,17 +14,33 @@
         </div>
         <nav class="ini">
             <ul>
-                <li><a href="http://127.0.0.1:8000/">inicio</a></li>     
+                <li><a href="http://127.0.0.1:8000/pg">inicio</a></li>     
                 <li><a href="http://127.0.0.1:8000/mostpacientes/">lista de pacientes</a></li>
                 <li><a href="http://127.0.0.1:8000/addpacientes/">Adicionar pacientes</a></li>
                 <li><a href="http://127.0.0.1:8000/medicos/">meus dados</a></li>
             </ul>
         </nav>
 
+        <nav class="lat">
+            <ul>
+                <li><a href="http://127.0.0.1:8000/medicos/addmed">Adicionar medicos</a></li>
+            </ul>
+        </nav>
 
-        
-s
+        <section class='pac'>
+            <h3>Meus dados</h3>
+            {% for Medico in Medicos %}
+                
+                <h3><a href="">{{ Medico.nome_do_medico }}</a></h3>
+                <p>{{ Medico.idade|linebreaksbr }}</p>
+                <p>{{ Medico.formacao|linebreaksbr }}</p>
+                <p>{{ Medico.especializacao|linebreaksbr }}</p>
+                <p>{{ Medico.tempo_de_trabalho|linebreaksbr }}</p>
+                <p>{{ Medico.setor_de_trabalho|linebreaksbr }}</p>
+                <p>{{ Medico.status|linebreaksbr }}</p>
+            {% endfor %}
 
-
+   
+        </section>
     </body>
 </html>

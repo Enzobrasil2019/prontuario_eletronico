@@ -41,10 +41,10 @@ INSTALLED_APPS = [
     'blog',
     'addpacientes',
     'mostpacientes',
-    'mostinternacao',
-    'mostaltas',
     'mostambulatorial',
+    'mostinternacao',
     'medicos',
+
 ]
 
 MIDDLEWARE = [

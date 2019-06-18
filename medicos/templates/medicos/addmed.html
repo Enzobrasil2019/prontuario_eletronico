@@ -2,10 +2,10 @@
 
 <html>
     <head>
-        <title>HSN-Lista De Pacientes em Alta</title>
+        <title>HSN-adicionando paciente</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/mostaltas.css' %}">
+        <link rel="stylesheet" href="{% static 'css/med.css' %}">
     </head>
     <body>
 
@@ -14,22 +14,30 @@
         </div>
         <nav class="ini">
             <ul>
-                <li><a href="http://127.0.0.1:8000/">inicio</a></li>     
+                <li><a href="http://127.0.0.1:8000/pg">inicio</a></li>     
                 <li><a href="http://127.0.0.1:8000/mostpacientes/">lista de pacientes</a></li>
                 <li><a href="http://127.0.0.1:8000/addpacientes/">Adicionar pacientes</a></li>
+                <li><a href="http://127.0.0.1:8000/medicos/">meus dados</a></li>
             </ul>
         </nav>
-
 
         <nav class="lat">
             <ul>
-                <li><a href="http://127.0.0.1:8000/mostpacientes/mostinter">Mostrar pacintes internados</a></li>
-                <li><a href="http://127.0.0.1:8000/mostpacientes/mostamb">Mostrar pacintes ambulatorial</a></li>
-                <li><a href="http://127.0.0.1:8000/mostpacientes/mostaltas">Mostrar pacintes de alta</a></li>
+                <li><a href="http://127.0.0.1:8000/medicos/addmed">Adicionar medicos</a></li>
             </ul>
         </nav>
+        
 
 
+        <div class = 'pac'>
+            <h1>Nova postagem</h1>
+            <form method="POST" class="post_form">{% csrf_token %}
+                {{ form.as_p }}
+                    <button type="submit" class="save btn btn-default">Save</button>
+            </form>
+        </div>
 
+   
+        </section>
     </body>
 </html>

@@ -3,6 +3,12 @@ from django.utils import timezone
 
 
 class Medico(models.Model):
+    user = 'user'
+    superuser = 'superuser'
+
+
+    status = [(user, 'User'), (superuser, 'Superuser')]
+
 
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -12,7 +18,8 @@ class Medico(models.Model):
     especializacao = models.CharField(max_length=200)
     tempo_de_trabalho = models.CharField(max_length=200)
     setor_de_trabalho  = models.CharField(max_length=200)
-    status = models.CharField(max_length=20)
+    status = models.CharField(max_length=9,choices=status, default='user')
+    senha = models.CharField(max_length=8, default=12345678)
     published_date = models.DateTimeField(
             blank=True, null=True)
 

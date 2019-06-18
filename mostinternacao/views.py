@@ -2,19 +2,51 @@ from django.shortcuts import render
 from django.utils import timezone
 from .models import Internacao
 from .forms import PostForm
+from django.shortcuts import redirect
+
 # Create your views here.
 
 def post_list(request): 
-    Internacoes = Internacao.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'mostinternacao/mostinter.html', {'Internacoes': Internacoes})
+    qs = Internacao.objects.all()
+    nome_do_paciente_contains_query = request.GET.get('nome_do_paciente_contains')
+
+    
+    if nome_do_paciente_contains_query != ' ' and nome_do_paciente_contains_query is not None:
+        qs = qs.filter(nome_do_paciente__icontains = nome_do_paciente_contains_query)
+
+    context = {
+        'queryset': qs
+    }
+
+    return render(request, 'mostinternacao/mostinter.html', context)
+
 
 def post_form(request): 
-    form = PostForm()
-    return render(request, 'mostinternacao/addinter.html', {'form': form})
+     if request.method == "POST":
+         form = PostForm(request.POST)
+         if form.is_valid():
+             inter = form.save(commit=False)
+             inter.author = request.user
+             inter.published_date = timezone.now()
+             inter.save()
+             return redirect('http://127.0.0.1:8000/mostpacientes/mostinter/', pk=inter.pk)
+     else:
+         form = PostForm()
+     return render(request, 'mostinternacao/addinter.html', {'form': form})
 
 def post_alter(request): 
     return render(request, 'mostinternacao/alterdados.html', {'Internacoes': Internacoes})
 
 def post_altas(request): 
-    Internacoes = Internacao.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'mostinternacao/mostaltas.html', {'Internacoes': Internacoes})
+    qs = Internacao.objects.all()
+    nome_do_paciente_contains_query = request.GET.get('nome_do_paciente_contains')
+
+    
+    if nome_do_paciente_contains_query != ' ' and nome_do_paciente_contains_query is not None:
+        qs = qs.filter(nome_do_paciente__icontains = nome_do_paciente_contains_query)
+
+    context = {
+        'queryset': qs
+    }
+
+    return render(request, 'mostinternacao/mostaltas.html', context )

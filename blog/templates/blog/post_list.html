@@ -14,36 +14,19 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="#">inicio</a></li>     
-                <li><a href="mostpacientes/">lista de pacientes</a>
+                <li><a href="http://127.0.0.1:8000/pg">inicio</a></li>     
+                <li><a href="http://127.0.0.1:8000/mostpacientes/">lista de pacientes</a>
 
                 </li>
-                <li><a href="addpacientes/">Adicionar pacientes</a></li>
+                <li><a href="http://127.0.0.1:8000/addpacientes/">Adicionar pacientes</a></li>
 
-                <li><a href="outras/">Outras alteracoes de dados</a></li>
+                <li><a href="http://127.0.0.1:8000/medicos/">Meus dados</a></li>
             </ul>
         </nav>
 
         <div class="entrada">
             <h2>Bem vindo ao Hospital Sem Nome<h2>
         </div>
-        {% for post in posts %}
-            <div>
-                <p>published: {{ post.nome_do_paciente }}</p>
-                <h1><a href="">{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-            </div>
-        {% endfor %}
+
     </body>
 </html>

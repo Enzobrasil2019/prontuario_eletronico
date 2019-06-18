@@ -14,10 +14,10 @@
         </div>
         <nav class="ini">
             <ul>
-                <li><a href="http://127.0.0.1:8000/">inicio</a></li>     
+                <li><a href="http://127.0.0.1:8000/pg">inicio</a></li>     
                 <li><a href="http://127.0.0.1:8000/mostpacientes/">lista de pacientes</a></li>
                 <li><a href="http://127.0.0.1:8000/addpacientes/">Adicionar pacientes</a></li>
-                <li><a href="/">pensando em um</a></li>
+                <li><a href="http://127.0.0.1:8000/medicos/">Meus dados</a></li>
             </ul>
         </nav>
 
@@ -30,21 +30,38 @@
 
             </ul>
         </nav>
+        
 
-        <section class='pac'>
+        <form method='get' action='.'>
+        <div class form-row>
+            <class form-group col=12 >
+                <div>
+                    <input class="form-control form-control-lg" border-right-0 border' type='searsh' name='nome_do_paciente_contains' placeholder="nome_do_paciente_contains">
+                    <span class = 'imn-group-append'>
+                        <div> class='forms-control pv=2 
+                            <i class='fa fa-search>></i>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class='pac'>
+        {% for Ambulatorio in queryset %}
             <h3>Pacientes Ambulatorio</h3>
-            {% for Ambulatorio in Ambulatorios %}
                 {% if Ambulatorio.tipo_de_atendimento == 'ambulatorio'%}
-                    <h3><a href="">{{ Ambulatorio.nome_do_paciente }}</a></h3>
-                    <p>{{ Ambulatorio.nome_do_paciente|linebreaksbr }}</p>
-                    <p>{{ Ambulatorio.nome_do_pai|linebreaksbr }}</p>
-                    <p>{{ Ambulatorio.nome_da_mae|linebreaksbr }}</p>
-                    <p>{{ Ambulatorio.nome_da_medico|linebreaksbr }}</p>
-                    <p>{{ Ambulatorio.nome_da_medico|linebreaksbr }}</p>
-                    <p>{{ Ambulatorio.text|linebreaksbr }}</p>
-                {% endif %}
-            {% endfor %}
-        </section>
+                <h3><a href="">{{ Ambulatorio.nome_do_paciente }}</a></h3>
+                <p>{{ Ambulatorio.nome_do_pai|linebreaksbr }}</p>
+                <p>{{ Ambulatorio.nome_da_mae|linebreaksbr }}</p>
+                <p>{{ Ambulatorio.nome_da_medico_responsavel|linebreaksbr }}</p>
+                <p>{{ Ambulatorio.nome_do_enfermeiro_responsavel|linebreaksbr }}</p>
+                <p>{{ Ambulatorio.idade|linebreaksbr }}</p>
+                <p>{{ Ambulatorio.doenca|linebreaksbr }}</p>
+                <p>{{ Ambulatorio.setor|linebreaksbr }}</p>
+             {% endif %}
+        {% endfor %}
+
+        </div>
 
     </body>
 </html>

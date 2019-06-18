@@ -14,11 +14,11 @@
         </div>
         <nav class="ini">
             <ul>
-                <li><a href="http://127.0.0.1:8000/">inicio</a></li>     
+                <li><a href="http://127.0.0.1:8000/pg">inicio</a></li>     
                 <li><a href="http://127.0.0.1:8000/mostpacientes/">lista de pacientes</a>
                 </li>
                 <li><a href="http://127.0.0.1:8000/addpacientes/">Adicionar pacientes</a></li>
-
+                <li><a href="http://127.0.0.1:8000/medicos/">Meus dados</a></li>
             </ul>
         </nav>
         <nav class="lat">
@@ -27,13 +27,14 @@
                 <li><a href="http://127.0.0.1:8000/mostpacientes/mostinter/addinter/">Adicionar pacientes da internacao</a></li>
             </ul>
         </nav>
-       {% block content %}
-            <h1>Nova postagem</h1>
-            <form method="POST" class="post-form">{% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="save btn btn-default">Save</button>
-            </form>
-        {% endblock %}
+        <div class='pac'>
+            {% block content %}
+                <h1>Nova postagem</h1>
+                <form method="POST" class="post-form">{% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="save btn btn-default">Save</button>
+                </form>
+            {% endblock %}
         </div>
     </body>
 </html>

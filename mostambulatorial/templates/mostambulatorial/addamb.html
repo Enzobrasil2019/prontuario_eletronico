@@ -10,16 +10,16 @@
     </head>
     <body>
 
-        <div class="page-header">
-            <a href="{% url 'post_form' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <div class="page-header">8
             <h1><a href="/">Hospital Sem Nome</a></h1>
         </div>
         <nav class="ini">
             <ul>
-                <li><a href="http://127.0.0.1:8000/">inicio</a></li>     
-                <li><a href="http://127.0.0.1:8000/mostpacientes/">lista de pacientes</a>
-                </li>
+                <li><a href="http://127.0.0.1:8000/pg">inicio</a></li>     
+                <li><a href="http://127.0.0.1:8000/mostpacientes/">lista de pacientes</a></li>
                 <li><a href="http://127.0.0.1:8000/addpacientes/">Adicionar pacientes</a></li>
+                <li><a href="http://127.0.0.1:8000/medico/">Meus dados</a></li>
+
             </ul>
         </nav>
         <nav class="lat">
@@ -28,14 +28,15 @@
                 <li><a href="http://127.0.0.1:8000/mostpacientes/mostinter/addinter/">Adicionar pacientes da internacao</a></li>
             </ul>
         </nav>
+        
+        <div class='pac'>
+            <h1>Nova postagem</h1>
+            <form method="POST" class="post-form">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="save btn btn-default">Save</button>
+            </form>
+        </div>
 
-    {% block content %}
-        <h1>Nova postagem</h1>
-        <form method="POST" class="post-form">{% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="save btn btn-default">Save</button>
-        </form>
-    {% endblock %}
 
 
     </body>
