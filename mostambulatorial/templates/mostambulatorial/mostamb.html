@@ -49,15 +49,22 @@
         <div class='pac'>
         <h3>Pacientes Ambulatorio</h3>
         {% for Ambulatorio in queryset %}
-                <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-                {% if Ambulatorio.tipo_de_atendimento == 'ambulatorio'%}
+
+            {% if Ambulatorio.tipo_de_atendimento == 'ambulatorio'%}
                 <h1><a href="{% url 'post_detail' pk=Ambulatorio.pk %}">{{ Ambulatorio.title }}</a></h1>
+                <h3>nome_do_pai:</h3>
                 <p>{{ Ambulatorio.nome_do_pai|linebreaksbr }}</p>
+                <h3>nome_da_mae:</h3>
                 <p>{{ Ambulatorio.nome_da_mae|linebreaksbr }}</p>
-                <p>{{ Ambulatorio.nome_da_medico_responsavel|linebreaksbr }}</p>
+                <h3>nome_do_medico_responsavel:</h3>
+                <p>{{ Ambulatorio.nome_do_medico_responsavel|linebreaksbr }}</p>
+                <h3>nome_do_enfermeiro_responsavel:</h3>
                 <p>{{ Ambulatorio.nome_do_enfermeiro_responsavel|linebreaksbr }}</p>
+                <h3>idade:</h3>
                 <p>{{ Ambulatorio.idade|linebreaksbr }}</p>
+                <h3>doenca:</h3>
                 <p>{{ Ambulatorio.doenca|linebreaksbr }}</p>
+                <h3>setor:</h3>
                 <p>{{ Ambulatorio.setor|linebreaksbr }}</p>
              {% endif %}
         {% endfor %}

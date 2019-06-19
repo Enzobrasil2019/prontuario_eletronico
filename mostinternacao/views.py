@@ -50,3 +50,13 @@ def post_altas(request):
     }
 
     return render(request, 'mostinternacao/mostaltas.html', context )
+
+
+def post_detail(request, pk):
+    post = get_object_or_404(Internacao, pk=pk)
+    return render(request, 'mostinternacao/mostdetail.html', {'post': post})
+
+
+def post_detail(request, pk):
+    post = get_object_or_404(Internacao, pk=pk)
+    return render(request, 'mostinternacao/mostdetaila.html', {'post': post})

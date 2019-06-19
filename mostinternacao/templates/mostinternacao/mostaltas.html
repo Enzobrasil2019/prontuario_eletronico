@@ -51,14 +51,23 @@
             {% for Internacao in queryset %}
                 {% if Internacao.tipo_de_atendimento == 'em alta'%}
             
-                    <h3><a href="">{{ Internacao.nome_do_paciente }}</a></h3>
+                    <h3><a href="{% url 'post_detail' pk=Internacao.pk %}">{{ Internacao.nome_do_paciente }}</a></h3>
+                    <h3>nome_do_paciente:</h3>
                     <p>{{ Internacao.nome_do_paciente|linebreaksbr }}</p>
+                    <h3>nome_do_pai:</h3>
                     <p>{{ Internacao.nome_do_pai|linebreaksbr }}</p>
+                    <h3>nome_da_mae:</h3>
                     <p>{{ Internacao.nome_da_mae|linebreaksbr }}</p>
-                    <p>{{ Internacao.nome_da_medico_responsavel|linebreaksbr }}</p>
+                    <h3>nome_do_medico_responsavel:</h3>
+                    <p>{{ Internacao.nome_do_medico_responsavel|linebreaksbr }}</p>
+                    <h3>nome_do_enfermeiro_responsavel:</h3>
                     <p>{{ Internacao.nome_do_enfermeiro_responsavel|linebreaksbr }}</p>
+
+                    <h3>idade:</h3>
                     <p>{{ Internacao.idade|linebreaksbr }}</p>
+                    <h3>doenca:</h3>
                     <p>{{ Internacao.doenca|linebreaksbr }}</p>
+                    <h3>doenca:</h3>
                     <p>{{ Internacao.setor|linebreaksbr }}</p>
                 {% endif %}
             {% endfor %}

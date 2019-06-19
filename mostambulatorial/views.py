@@ -34,7 +34,6 @@ def post_form(request):
          form = PostForm()
      return render(request, 'mostambulatorial/addamb.html', {'form': form})
 
- 
 def post_edit(request, pk):
      amb = get_object_or_404(Post, pk=pk)
      if request.method == "POST":
@@ -49,7 +48,7 @@ def post_edit(request, pk):
          form = PostForm(instance=amb)
      return render(request, 'blog/alterdados.html', {'form': form})
 
+
 def post_detail(request, pk):
-    Ambulatorio.objects.get(pk=pk)
-    Amb = get_object_or_404(Ambulatorio, pk=pk)
-    return render(request, 'mostambulatorial/mostdetail.html', {'Amb': Amb})
+    post = get_object_or_404(Ambulatorio, pk=pk)
+    return render(request, 'mostambulatorial/mostdetail.html', {'post': post})

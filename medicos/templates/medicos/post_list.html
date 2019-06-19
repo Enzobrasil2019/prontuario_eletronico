@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>HSN-adicionando paciente</title>
+        <title>HSN-Mostrar medicos</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'med/med.css' %}">
@@ -27,16 +27,38 @@
             </ul>
         </nav>
 
+        <form method='get' action='.'>
+        <div class form-row>
+            <class form-group col=12 >
+                <div>
+                    <input class="form-control form-control-lg" border-right-0 border' type='searsh' name='nome_do_medico_contains' placeholder="nome_do_medico_contains">
+                    <span class = 'imn-group-append'>
+                        <div> class='forms-control pv=2 
+                            <i class='fa fa-search>></i>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+
         <section class='pac'>
             <h3>Meus dados</h3>
-            {% for Medico in Medicos %}
+            {% for Medico in queryset %}
                 
                 <h3><a href="">{{ Medico.nome_do_medico }}</a></h3>
-                <p>{{ Medico.idade|linebreaksbr }}</p>
+                
+                <h3>idade:</h3><p>{{ Medico.idade|linebreaksbr }}</p>
+                <h3>Formacao:</h3>
                 <p>{{ Medico.formacao|linebreaksbr }}</p>
+                <h3>especializacao:</h3>
                 <p>{{ Medico.especializacao|linebreaksbr }}</p>
+                <h3>tempo de trabalho:</h3>
                 <p>{{ Medico.tempo_de_trabalho|linebreaksbr }}</p>
+                <h3>setor de trabalho:</h3>
                 <p>{{ Medico.setor_de_trabalho|linebreaksbr }}</p>
+                <h3>status:</h3>
                 <p>{{ Medico.status|linebreaksbr }}</p>
             {% endfor %}
 
